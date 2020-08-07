@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-7</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            width: 1200px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)  ,0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #header{
+            background-color: grey;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+            height: 60px;
+        }
+        #banner{
+            background-color: skyblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+            height: 400px;
+        }
+        h2{
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #section1{
+            display: flex;
+            flex-direction: row;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        #avtar1{
+            order: 1;
+            margin-left: 50px;
+            margin-right: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            border-radius: 50%;
+        }
+        #avtar2{
+            order: 2;
+            margin-left: 50px;
+            margin-right: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            border-radius: 50%;
+        }
+        #avtar3{
+            order: 3;
+            margin-left: 50px;
+            margin-right: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            border-radius: 50%;
+        }
+        #avtar4{
+            order: 4;
+            margin-left: 50px;
+            margin-right: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            border-radius: 50%;
+        }
+        #section2::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #left{
+            width: 49.5%;
+            height: 521px;
+            background-color: grey;
+            color: white;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            float: left;
+        }
+        #right{
+            float: right;
+            width: 48%;
+            /* margin-right: 15px; */
+        }
+        #article1{
+            width: 100%;
+            height: 167px;
+            background-color: burlywood;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #article2{
+            width: 100%;
+            height: 167px;
+            background-color: burlywood;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #article3{
+            width: 100%;
+            height: 167px;
+            background-color: burlywood;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #tech{
+            width: 21%;
+            background-color: orange;
+            height: 430px;
+            margin: 20px;
+            float: left;
+            color: white;
+        }
+        #section3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #section3::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #footer{
+            background-color: grey;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-top: 10px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">Header</div>
+        <div id="banner">Banner</div>
+        <h2>Section 1</h2>
+        <div id="section1">
+            <div id="avtar1"></div>
+            <div id="avtar2"></div>
+            <div id="avtar3"></div>
+            <div id="avtar4"></div>
+        </div>
+        <h2>Section 2</h2>
+        <div id="section2">
+            <div id="left">Main Content</div>
+            <div id="right">
+                <div id="article1">Article-1</div>
+                <div id="article2">Article-2</div>
+                <div id="article3">Article-3</div>
+            </div>
+        </div>
+        <h2>Section 3</h2>
+        <div id="section3">
+            <div id="tech"></div>
+            <div id="tech"></div>
+            <div id="tech"></div>
+            <div id="tech"></div>
+        </div>
+        <h2>Section 4</h2>
+        <div id="section4">
+            <div id="footer">Footer</div>
+        </div>
+    </div>
+</body>
+</html>
