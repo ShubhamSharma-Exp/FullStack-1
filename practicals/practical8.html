@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Practical-8</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        offset-distance: 100vh-60px;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 1200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        position: relative;
+      }
+
+      #header {
+        background-color: grey;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-bottom: 10px;
+        height: 60px;
+        width: 1200px;
+        position: fixed;
+      }
+
+      #banner {
+        background-image: url("../images/practical8_images/background_image.jpg");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 10px;
+        height: 600px;
+      }
+      #banner h2 {
+        color: rgb(65, 180, 65);
+        margin-top: 60px;
+        margin-left: 20px;
+        padding-top: 15px;
+        font-size: 50px;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      #section1 {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center;
+            align-items: center; */
+      }
+
+      #avtar1 {
+        order: 1;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      #avtar1 img {
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      #avtar2 {
+        order: 2;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      #avtar2 img {
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      #avtar3 {
+        order: 3;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      #avtar3 img {
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      #avtar4 {
+        order: 4;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      #avtar4 img {
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      #section2::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #left {
+        width: 49.5%;
+        height: 521px;
+        background-color: rgb(89, 108, 136);
+        color: white;
+        margin-bottom: 15px;
+        float: left;
+        overflow: hidden;
+      }
+
+      #right {
+        float: right;
+        width: 48%;
+        /* margin-right: 15px; */
+      }
+
+      #article1 {
+        width: 100%;
+        height: 167px;
+        background-image: url(../images/practical8_images/p1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      #article2 {
+        width: 100%;
+        height: 167px;
+        background-image: url(../images/practical8_images/p2.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      #article3 {
+        width: 100%;
+        height: 167px;
+        background-image: url(../images/practical8_images/p3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        font-size: 30px;
+      }
+      #tech1,
+      #tech2,
+      #tech3,
+      #tech4 {
+        width: 21%;
+        background-color: orange;
+        height: 430px;
+        margin: 20px;
+        float: left;
+        color: white;
+      }
+
+      #section3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #section3::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #footer {
+        background-color: grey;
+        color: white;
+        margin-top: 10px;
+        height: 60px;
+      }
+      .navbar {
+        width: 100%;
+        overflow: auto;
+      }
+      .navbar a {
+        float: left;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        width: 18%;
+        text-align: center;
+      }
+      .navbar a:hover {
+        background-color: #000;
+      }
+      #tech1 img,
+      #tech2 img,
+      #tech3 img,
+      #tech4 img {
+        width: 100%;
+      }
+      #tech1 a,
+      #tech2 a,
+      #tech3 a,
+      #tech4 a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        margin-top: 20px;
+        margin-left: 35px;
+        width: 60%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #tech1 a:hover,
+      #tech2 a:hover,
+      #tech3 a:hover,
+      #tech4 a:hover {
+        background-color: blue;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("a").on("click", function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+          }
+          var hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              window.location.hash = hash;
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+
+  <body scroll-spy="scroll" data-target=".navbar" data-offset="60">
+    <div id="container" class="container">
+      <div id="header" class="header">
+        <div class="navbar">
+          <a href="#home">HOME</a>
+          <a href="#aboutus">ABOUT US</a>
+          <a href="#team">TEAM</a>
+          <a href="#technologies">TECHNOLOGIES</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+      </div>
+      <section id="home" class="home">
+        <div id="banner">
+          <h2>Practical-8</h2>
+        </div>
+      </section>
+      <section id="team" class="team">
+        <h2 style="font-size: 30px;">Team Members</h2>
+        <div id="section1">
+          <div id="avtar1">
+            <img src="../images/practical8_images/1.png" alt="" />
+          </div>
+          <div id="avtar2">
+            <img src="../images/practical8_images/2.png" alt="" />
+          </div>
+          <div id="avtar3">
+            <img src="../images/practical8_images/3.png" alt="" />
+          </div>
+          <div id="avtar4">
+            <img src="../images/practical8_images/9.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section id="aboutus" class="aboutus">
+        <h2 style="font-size: 30px;">About Us</h2>
+        <div id="section2">
+          <div id="left">
+            <h2>About Projects</h2>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+              doloribus culpa quisquam non sit nulla laboriosam dicta rerum
+              cumque vitae dolorem tempore assumenda voluptatibus eaque,
+              repellendus aperiam ut officia neque labore! Modi, quidem vel
+              perferendis cumque reiciendis dignissimos delectus explicabo
+              maxime ullam autem voluptatibus temporibus quod velit enim dolorum
+              laudantium praesentium beatae eum deleniti exercitationem
+              aspernatur libero. Nam itaque eligendi, vero temporibus iste
+              fugiat fugit nemo, a accusantium consectetur reiciendis. Nihil
+              necessitatibus eum hic pariatur voluptate vero quas ex, minima
+              veniam laudantium. Laboriosam consectetur dolorem commodi velit
+              illo, architecto modi voluptas sint repellendus corporis quasi,
+              nostrum aperiam placeat facere autem blanditiis aut fuga natus
+              ipsa debitis ipsam nemo culpa impedit exercitationem? Dolores
+              quis, a quae nemo molestiae consequuntur eligendi, delectus
+              architecto minus optio ut quo nulla neque! At quas molestias
+              exercitationem quae incidunt, doloribus reiciendis, voluptatem
+              voluptatum, dolores in libero alias maiores! Aliquam voluptas
+              debitis velit. Porro ipsum a repudiandae quas, perspiciatis
+              voluptate distinctio consectetur repellat itaque, quibusdam, modi
+              iusto quis ducimus aspernatur tenetur blanditiis sed esse
+              reiciendis delectus. Nostrum, mollitia illum consectetur quas
+              voluptate inventore laboriosam aut repellat commodi magnam rerum
+              odit tempore, beatae eius. Tempore voluptatem fuga perspiciatis
+              mollitia aliquam, voluptatibus assumenda officiis debitis rem
+              tenetur harum suscipit. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Nesciunt magnam reiciendis sapiente veniam
+              provident distinctio aliquid sit? Illum, at molestiae consectetur
+              eveniet expedita, perferendis, dolorum voluptates aspernatur
+              soluta quam laudantium ab mollitia sit repudiandae aperiam! Vitae
+              aspernatur, eius ad temporibus quas nam eum laborum quod
+              doloremque dolor animi ullam aperiam perspiciatis velit similique.
+              Cumque doloribus sapiente corporis natus voluptate doloremque at
+              ullam odio placeat rerum libero laboriosam, obcaecati aspernatur
+              aperiam quo non beatae magnam nihil suscipit alias quasi,
+              reprehenderit magni facilis nesciunt. Pariatur facere ipsa sed nam
+              sint necessitatibus temporibus quaerat! Possimus enim molestiae
+              totam. Optio, possimus! Assumenda, sunt at.
+            </p>
+          </div>
+          <div id="right">
+            <div id="article1">
+              <h2 style="font-size: 30px; color: black; margin: 0; padding: 0;">
+                Project-1
+              </h2>
+            </div>
+            <div id="article2">
+              <h2 style="font-size: 30px; color: black; margin: 0; padding: 0;">
+                Project-2
+              </h2>
+            </div>
+            <div id="article3">
+              <h2 style="font-size: 30px; color: black; margin: 0; padding: 0;">
+                Project-3
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="technologies" class="technologies">
+        <h2 style="font-size: 30px;">Technologies Used</h2>
+        <div id="section3">
+          <div id="tech1">
+            <img src="../images/practical6html.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to HTML
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_html.html">Read More</a>
+          </div>
+          <div id="tech2">
+            <img src="../images/practical6css.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to CSS
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_css.html">Read More</a>
+          </div>
+          <div id="tech3">
+            <img src="../images/practical6jQuery.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to jQuery
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_JS.html">Read More</a>
+          </div>
+          <div id="tech4">
+            <img src="../images/practical6bootstrap.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to Bootstrap
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_Bootstrap.html"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <h2 style="font-size: 30px;">Contact</h2>
+        <div id="section4">
+          <div id="footer">
+            <p style="text-align: center; padding-top: 10px;">
+              Website Template for Practical-8 &copy;<a href="../index.html"
+                >Practical-Labs</a
+              >
+            </p>
+            <p style="text-align: center;"><a href="#home">Back to Top</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("a").on("click", function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $("html,body").animate(
+              { scrollTop: $(hash).offset().top },
+              800,
+              function () {
+                window.location.hash = hash;
+              }
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
