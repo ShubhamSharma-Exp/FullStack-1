@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Practical-9</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+
+      html {
+        scroll-padding-top: 60px;
+        scroll-behavior: smooth;
+      }
+      /*
+      1) 801 to 1199
+      2) min width 800
+      3) max width 625
+       */
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: auto;
+      }
+
+      .header {
+        width: 100%;
+        max-width: 1200px;
+        height: 60px;
+        background-color: grey;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+      }
+      .header .menu {
+        list-style: none;
+        float: right;
+        padding: 0 20px;
+      }
+      .menu li {
+        display: inline-block;
+        line-height: 60px;
+      }
+      .menu li a {
+        text-decoration: none;
+        display: block;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        transition: 0.7s;
+      }
+      .menu li a:hover {
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+      }
+      .show-btn,
+      .hide-btn,
+      #chk {
+        font-size: 30px;
+        color: white;
+        line-height: 60px;
+        display: none;
+        float: right;
+        padding-right: 20px;
+      }
+
+      #banner {
+        background-image: url("../images/practical8_images/background_image.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        font-size: 30px;
+        margin-top: 80px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 15px;
+        height: 600px;
+      }
+
+      #banner h2 {
+        color: rgb(65, 180, 65);
+        margin: 20px 20px;
+      }
+
+      #section1 {
+        width: 100%;
+        margin: 15px auto;
+      }
+      #section1::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .round img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #section2::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #left {
+        width: 50%;
+        height: 521px;
+        background-color: rgb(89, 108, 136);
+        color: white;
+        float: left;
+        overflow: hidden;
+      }
+      .para h2 {
+        text-align: center;
+        margin: 10px 5px;
+        color: white;
+      }
+      .para p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+      }
+
+      #right {
+        float: right;
+        width: 48%;
+        height: 521px;
+      }
+
+      .article {
+        width: 100%;
+        height: 31%;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      #project1 {
+        background-image: url(../images/practical8_images/p1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      #project2 {
+        background-image: url(../images/practical8_images/p2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      #project3 {
+        background-image: url(../images/practical8_images/p3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      h2 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      .tech {
+        width: 20%;
+        background-color: orange;
+        height: 450px;
+        margin-left: 50px;
+        float: left;
+        border-radius: 10px;
+        color: white;
+      }
+
+      #section3 {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #section3::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      #footer {
+        background-color: grey;
+        color: white;
+        height: 100px;
+      }
+      #footer > p {
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .tech img {
+        width: 96%;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 10px;
+      }
+
+      .tech a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .tech a:hover {
+        background-color: blue;
+      }
+      /* 1st break point */
+      @media (min-width: 801px) and (max-width: 1199px) {
+        .header .menu {
+          list-style: none;
+          float: right;
+        }
+        .menu li {
+          line-height: 70px;
+          display: inline-block;
+        }
+        .menu li a {
+          display: block;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 20px;
+          color: white;
+          padding: 0px 20px;
+        }
+        .menu li a:hover {
+          color: black;
+          background-color: white;
+        }
+        #container {
+          width: 100%;
+        }
+        .show-btn,
+        .hide-btn,
+        #chk {
+          line-height: 60px;
+          color: white;
+          float: right;
+          padding-right: 25px;
+          display: none;
+          font-size: 30px;
+        }
+        #header {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          height: 60px;
+          background-color: grey;
+        }
+        #banner {
+          background-image: url("../images/practical8_images/background_image.jpg");
+          background-size: cover;
+          background-position: center;
+          color: white;
+          font-size: 30px;
+          margin-top: 80px;
+          width: 100%;
+          display: flex;
+          margin-bottom: 15px;
+          height: 600px;
+        }
+        #banner h2 {
+          color: rgb(65, 180, 65);
+          margin: 20px 20px;
+        }
+        #section1 {
+          width: 100%;
+        }
+        #section1::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        .round img {
+          height: 250px;
+          width: 250px;
+          border-radius: 50%;
+          float: left;
+          margin-left: 14%;
+          margin-bottom: 20px;
+        }
+        #section2::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        #left {
+          width: 50%;
+          height: 521px;
+          background-color: rgb(89, 108, 136);
+          color: white;
+          float: left;
+          overflow: hidden;
+        }
+        .para h2 {
+          text-align: center;
+          margin: 10px 5px;
+          color: white;
+        }
+        .para p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+        }
+        #right {
+          float: right;
+          width: 48%;
+          height: 521px;
+        }
+        .article {
+          width: 100%;
+          height: 31%;
+          display: flex;
+          justify-content: center;
+          color: white;
+          font-size: 30px;
+          margin-bottom: 20px;
+          overflow: hidden;
+        }
+
+        #project1 {
+          background-image: url(../images/practical8_images/p1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project2 {
+          background-image: url(../images/practical8_images/p2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project3 {
+          background-image: url(../images/practical8_images/p3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .tech {
+          width: 35%;
+          background-color: orange;
+          height: 450px;
+          margin-bottom: 20px;
+          margin-left: 90px;
+          float: left;
+          border-radius: 10px;
+          color: white;
+        }
+
+        #section3 {
+          width: 100%;
+          margin: 15px auto;
+        }
+
+        #section3::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        #footer {
+          background-color: grey;
+          color: white;
+          height: 90px;
+        }
+        #footer > p {
+          font-size: 20px;
+          text-align: center;
+          color: black;
+          padding: 20px;
+        }
+
+        .tech img {
+          width: 96%;
+          margin-top: 5px;
+          margin-left: 6px;
+          margin-right: 5px;
+          border-radius: 10px;
+        }
+
+        .tech a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          background-color: red;
+          padding: 10px;
+          border-radius: 10px;
+          color: white;
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 60%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .tech a:hover {
+          background-color: blue;
+        }
+      }
+      /* 2nd break point */
+      @media (max-width: 800px) {
+        .show-btn {
+          display: block;
+        }
+        .header .menu {
+          background-color: rgb(49, 44, 44);
+          text-align: center;
+          line-height: normal;
+          width: 100%;
+          position: fixed;
+          padding: 50px 0;
+          top: 0;
+          right: -100%;
+          transition: 1s;
+        }
+        .menu li {
+          display: block;
+        }
+        .menu li a {
+          display: block;
+        }
+        .menu li a:hover {
+          background-color: white;
+          color: black;
+        }
+        #chk:checked ~ .menu {
+          right: 0;
+        }
+        .hide-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 0px;
+        }
+        #container {
+          width: 100%;
+        }
+        #header {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          height: 60px;
+          background-color: grey;
+        }
+        #banner {
+          background-image: url("../images/practical8_images/background_image.jpg");
+          background-size: cover;
+          background-position: center;
+          color: white;
+          font-size: 30px;
+          margin-top: 80px;
+          width: 100%;
+          display: flex;
+          margin-bottom: 15px;
+          height: 400px;
+        }
+        #banner h2 {
+          color: rgb(65, 180, 65);
+          margin: 10px 20px;
+        }
+        #section1 {
+          width: 100%;
+        }
+        #section1::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        .round img {
+          height: 250px;
+          width: 250px;
+          border-radius: 50%;
+          float: left;
+          margin-left: 10%;
+          margin-bottom: 20px;
+        }
+        #section2::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        #left {
+          width: 100%;
+          height: 350px;
+          background-color: rgb(89, 108, 136);
+          color: white;
+          overflow: hidden;
+        }
+        .para h2 {
+          text-align: center;
+          margin: 10px 5px;
+          color: white;
+        }
+        .para p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+        }
+        #right {
+          width: 100%;
+          height: 400px;
+          margin-bottom: 20px;
+        }
+        .article {
+          width: 100%;
+          height: 31%;
+          display: flex;
+          justify-content: center;
+          color: white;
+          font-size: 30px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          overflow: hidden;
+        }
+
+        #project1 {
+          background-image: url(../images/practical8_images/p1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project2 {
+          background-image: url(../images/practical8_images/p2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project3 {
+          background-image: url(../images/practical8_images/p3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .tech {
+          width: 35%;
+          background-color: orange;
+          height: 450px;
+          margin-bottom: 20px;
+          margin-left: 60px;
+          float: left;
+          border-radius: 10px;
+          color: white;
+        }
+
+        #section3 {
+          width: 100%;
+          margin: 15px auto;
+        }
+
+        #section3::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+
+        #footer {
+          background-color: grey;
+          color: white;
+          height: 90px;
+        }
+        #footer > p {
+          font-size: 20px;
+          text-align: center;
+          color: black;
+          padding: 20px;
+        }
+
+        .tech img {
+          width: 96%;
+          margin-top: 5px;
+          margin-left: 6px;
+          margin-right: 5px;
+          border-radius: 10px;
+        }
+
+        .tech a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          background-color: red;
+          padding: 10px;
+          border-radius: 10px;
+          color: white;
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 60%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .tech a:hover {
+          background-color: blue;
+        }
+      }
+      @media (max-width: 625px) {
+        .show-btn {
+          display: block;
+        }
+        .header .menu {
+          background-color: rgb(49, 44, 44);
+          text-align: center;
+          line-height: normal;
+          width: 100%;
+          position: fixed;
+          padding: 50px 0;
+          top: 0;
+          right: -100%;
+          transition: 1s;
+        }
+        .menu li {
+          display: block;
+        }
+        .menu li a {
+          display: block;
+        }
+        .menu li a:hover {
+          background-color: white;
+          color: black;
+        }
+        #chk:checked ~ .menu {
+          right: 0;
+        }
+        .hide-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 0px;
+        }
+        #container {
+          width: 100%;
+          min-width: 320px;
+        }
+        #header {
+          width: 100%;
+          position: fixed;
+          top: 0;
+          height: 60px;
+          background-color: grey;
+        }
+        #banner {
+          background-image: url("../images/practical8_images/background_image.jpg");
+          background-size: cover;
+          background-position: center;
+          color: white;
+          font-size: 30px;
+          margin-top: 80px;
+          width: 100%;
+          display: flex;
+          margin-bottom: 15px;
+          height: 300px;
+        }
+        #banner h2 {
+          color: rgb(65, 180, 65);
+          margin: 10px 20px;
+        }
+        #section1 {
+          width: 100%;
+        }
+        .round img {
+          height: 75%;
+          width: 75%;
+          border-radius: 50%;
+          margin-bottom: 20px;
+        }
+
+        #left {
+          width: 100%;
+          height: 250px;
+          background-color: rgb(89, 108, 136);
+          color: white;
+          margin-bottom: 20px;
+          overflow: hidden;
+        }
+        .para h2 {
+          text-align: center;
+          margin: 10px 5px;
+          color: white;
+        }
+        .para p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+        }
+        #right {
+          width: 100%;
+          height: 400px;
+          margin-bottom: 20px;
+        }
+        .article {
+          box-sizing: border-box;
+          width: 100%;
+          height: 31%;
+          display: flex;
+          justify-content: center;
+          color: white;
+          font-size: 30px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          overflow: hidden;
+        }
+
+        #project1 {
+          background-image: url(../images/practical8_images/p1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project2 {
+          background-image: url(../images/practical8_images/p2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        #project3 {
+          background-image: url(../images/practical8_images/p3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        .tech {
+          width: 80%;
+          background-color: orange;
+          max-height: 450px;
+          margin-bottom: 20px;
+          margin-left: 40px;
+          border-radius: 10px;
+          color: white;
+        }
+
+        #section3 {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        #footer {
+          background-color: grey;
+          color: white;
+          height: 90px;
+        }
+        #footer > p {
+          font-size: 20px;
+          text-align: center;
+          color: black;
+          padding: 20px;
+        }
+
+        .tech img {
+          width: 96%;
+          margin-top: 5px;
+          margin-left: 6px;
+          margin-right: 5px;
+          border-radius: 10px;
+        }
+
+        .tech a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          background-color: red;
+          padding: 10px;
+          border-radius: 10px;
+          color: white;
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 60%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .tech a:hover {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container" class="container">
+      <div id="header" class="header">
+        <div class="navbar">
+          <input type="checkbox" id="chk" />
+          <label for="chk" class="show-btn">
+            <i class="fa fa-bars"></i>
+          </label>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <label for="chk" class="hide-btn">
+              <i class="fa fa-times"></i>
+            </label>
+          </ul>
+        </div>
+      </div>
+      <section id="home" class="home">
+        <div id="banner">
+          <h2>Practical-9</h2>
+        </div>
+      </section>
+      <section id="team" class="team">
+        <h2 style="font-size: 30px;">Team Members</h2>
+        <div id="section1">
+          <div class="team-container">
+            <div class="round">
+              <img src="../images/practical8_images/1.png" alt="" />
+            </div>
+            <div class="round">
+              <img src="../images/practical8_images/2.png" alt="" />
+            </div>
+            <div class="round">
+              <img src="../images/practical8_images/3.png" alt="" />
+            </div>
+            <div class="round">
+              <img src="../images/practical8_images/9.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="aboutus" class="aboutus">
+        <h2 style="font-size: 30px;">About Us</h2>
+        <div id="section2">
+          <div id="left">
+            <div class="content">
+              <div class="para">
+                <h2>About Projects</h2>
+                <p style="padding: 5px;">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                  doloribus culpa quisquam non sit nulla laboriosam dicta rerum
+                  cumque vitae dolorem tempore assumenda voluptatibus eaque,
+                  repellendus aperiam ut officia neque labore! Modi, quidem vel
+                  perferendis cumque reiciendis dignissimos delectus explicabo
+                  maxime ullam autem voluptatibus temporibus quod velit enim
+                  dolorum laudantium praesentium beatae eum deleniti
+                  exercitationem aspernatur libero. Nam itaque eligendi, vero
+                  temporibus iste fugiat fugit nemo, a accusantium consectetur
+                  reiciendis. Nihil necessitatibus eum hic pariatur voluptate
+                  vero quas ex, minima veniam laudantium. Laboriosam consectetur
+                  dolorem commodi velit illo, architecto modi voluptas sint
+                  repellendus corporis quasi, nostrum aperiam placeat facere
+                  autem blanditiis aut fuga natus ipsa debitis ipsam nemo culpa
+                  impedit exercitationem? Dolores quis, a quae nemo molestiae
+                  consequuntur eligendi, delectus architecto minus optio ut quo
+                  nulla neque! At quas molestias exercitationem quae incidunt,
+                  doloribus reiciendis, voluptatem voluptatum, dolores in libero
+                  alias maiores! Aliquam voluptas debitis velit. Porro ipsum a
+                  repudiandae quas, perspiciatis voluptate distinctio
+                  consectetur repellat itaque, quibusdam, modi iusto quis
+                  ducimus aspernatur tenetur blanditiis sed esse reiciendis
+                  delectus. Nostrum, mollitia illum consectetur quas voluptate
+                  inventore laboriosam aut repellat commodi magnam rerum odit
+                  tempore, beatae eius. Tempore voluptatem fuga perspiciatis
+                  mollitia aliquam, voluptatibus assumenda officiis debitis rem
+                  tenetur harum suscipit. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Nesciunt magnam reiciendis sapiente veniam
+                  provident distinctio aliquid sit? Illum, at molestiae
+                  consectetur eveniet expedita, perferendis, dolorum voluptates
+                  aspernatur soluta quam laudantium ab mollitia sit repudiandae
+                  aperiam! Vitae aspernatur, eius ad temporibus quas nam eum
+                  laborum quod doloremque dolor animi ullam aperiam perspiciatis
+                  velit similique. Cumque doloribus sapiente corporis natus
+                  voluptate doloremque at ullam odio placeat rerum libero
+                  laboriosam, obcaecati aspernatur aperiam quo non beatae magnam
+                  nihil suscipit alias quasi, reprehenderit magni facilis
+                  nesciunt. Pariatur facere ipsa sed nam sint necessitatibus
+                  temporibus quaerat! Possimus enim molestiae totam. Optio,
+                  possimus! Assumenda, sunt at.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="right">
+            <div class="article" id="project1">
+              <h2>
+                Project-1
+              </h2>
+            </div>
+            <div class="article" id="project2">
+              <h2>
+                Project-2
+              </h2>
+            </div>
+            <div class="article" id="project3">
+              <h2>
+                Project-3
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="technologies" class="technologies">
+        <h2 style="font-size: 30px;">Technologies Used</h2>
+        <div id="section3">
+          <div class="tech">
+            <img src="../images/Practical6_images/practical6html.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to HTML
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_html.html">Read More</a>
+          </div>
+          <div class="tech">
+            <img src="../images/Practical6_images/practical6css.png" alt="" />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to CSS
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_css.html">Read More</a>
+          </div>
+          <div class="tech">
+            <img
+              src="../images/Practical6_images/practical6jQuery.png"
+              alt=""
+            />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to jQuery
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_JS.html">Read More</a>
+          </div>
+          <div class="tech">
+            <img
+              src="../images/Practical6_images/practical6bootstrap.png"
+              alt=""
+            />
+            <h3
+              style="text-align: center; margin-top: 10px; margin-bottom: 10px;"
+            >
+              Introduction to Bootstrap
+            </h3>
+            <p style="padding: 5px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              laborum blanditiis eum fugiat voluptatem fugit in exercitationem
+              velit, sapiente fuga rem dicta doloremque quia ut omnis tempora
+              quod ipsum quo quidem vitae possimus ipsam, dolore natus
+              consequatur?
+            </p>
+            <a href="./practical5_menuPages/practical5_Bootstrap.html"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <h2 style="font-size: 30px;">Contact</h2>
+        <div id="section4">
+          <div id="footer">
+            <p>
+              Website Template for Practical-8 &copy;<a href="../index.html"
+                >Practical-Labs</a
+              >
+              <br />
+              <a href="#home">Back to Top</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
