@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Practical-12</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: grey;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        width: 800px;
+        background-color: white;
+        margin: 30px auto;
+        padding: 10px;
+      }
+      .container h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+      }
+      tr {
+        text-align: center;
+      }
+      td {
+        width: 200px;
+        padding: 5px;
+        font-weight: 600;
+        border-left: 4px solid white;
+        border-right: 4px solid white;
+      }
+      th {
+        height: 70px;
+        font-size: 30px;
+        line-height: 65px;
+        color: #350350;
+        border-left: 4px solid white;
+        border-right: 4px solid white;
+      }
+      th i {
+        font-size: 30px;
+        line-height: 65px;
+        margin-right: 10px;
+        color: #350350;
+      }
+      .basic {
+        background-color: #85c1e9;
+      }
+      .plus {
+        background-color: #76d7c4;
+      }
+      .deluxe {
+        background-color: #73c6b6;
+      }
+      .pro {
+        background-color: #7dcea0;
+      }
+      .rates {
+        font-size: 25px;
+        color: green;
+        font-weight: 900;
+      }
+      .fa-check {
+        color: rgb(17, 150, 17);
+        font-size: 20px;
+      }
+      .fa-times {
+        color: red;
+        font-size: 20px;
+      }
+      tfoot tr {
+        height: 70px;
+        background-color: #abebc6;
+      }
+      tfoot tr td a {
+        padding: 12px;
+        background-color: #2e4053;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 30px;
+        color: #d5dbdb;
+        font-weight: 700;
+        width: 100px;
+        transition: 0.4s;
+      }
+      tfoot tr td a:hover {
+        background-color: #d5dbdb;
+        color: #2e4053;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6),
+          0 6px 20px 0 rgba(0, 0, 0, 0.6);
+      }
+      tbody tr:nth-child(odd) {
+        background-color: #abebc6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Select Your Plan</h2>
+      <table class="your-plans">
+        <colgroup class="basic"></colgroup>
+        <colgroup class="plus"></colgroup>
+        <colgroup class="deluxe"></colgroup>
+        <colgroup class="pro"></colgroup>
+        <thead>
+          <tr>
+            <th><i class="fa fa-wifi"></i>Basic</th>
+            <th><i class="fa fa-telegram"></i>Plus</th>
+            <th><i class="fa fa-dashboard"></i>Deluxe</th>
+            <th><i class="fa fa-bolt"></i>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rates">
+            <td>Rs. 500/-</td>
+            <td>Rs. 1500/-</td>
+            <td>Rs. 2500/-</td>
+            <td>Rs. 3500/-</td>
+          </tr>
+          <tr>
+            <td>50 Pages</td>
+            <td>75 Pages</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>3 Users</td>
+            <td>5 Users</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>10 Sites</td>
+            <td>50 Sites</td>
+            <td>100 Sites</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>50 MB</td>
+            <td>250 MB</td>
+            <td>1 GB</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Included</td>
+            <td>Included</td>
+            <td>Included</td>
+            <td>Included</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><a href="#">Sign up</a></td>
+            <td><a href="#">Sign up</a></td>
+            <td><a href="#">Sign up</a></td>
+            <td><a href="#">Sign up</a></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
