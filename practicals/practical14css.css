@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: rgb(196, 194, 194);
+}
+header h1 {
+  text-align: center;
+  margin: 20px;
+  color: red;
+  text-shadow: 2px 2px 6px rgb(153, 150, 150);
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Form Template 1 */
+
+.form-1 {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  margin: 50px 30px 20px 30px;
+  box-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
+}
+
+.form-1 .form-header1 {
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to right, orange, red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-1 .form-header1 p {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.form-1 .form-header1 .social-icons a i {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  padding: 10px 0;
+}
+.form-1-content {
+  padding: 20px;
+}
+.form-1 input[type="email"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+}
+.form-1 input[type="password"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+}
+.form-1 input[type="submit"] {
+  outline: none;
+  border: none;
+  padding: 10px 13px;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+  box-shadow: 3px 3px 6px grey;
+}
+.form-1 .bottom-content p {
+  font-size: 12px;
+  color: grey;
+  padding: 20px 0;
+  text-align: right;
+}
+.form-1 .bottom-content p a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: black;
+}
+.form-1 .bottom-content p a:hover {
+  color: red;
+}
+.bottom-content p#p1 {
+  display: inline-block;
+  margin-left: 13px;
+}
+
+/* Form Template 2 */
+
+.form-2 {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  margin: 50px 30px 20px 30px;
+  box-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
+  border-radius: 5px;
+}
+.form-2 .form-header2 {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  color: rgb(212, 29, 90);
+  overflow: hidden;
+}
+
+.form-2 input[type="email"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+}
+.form-2-content {
+  padding: 20px;
+}
+.form-2 input[type="password"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+}
+.form-2 input[type="submit"] {
+  outline: none;
+  border: none;
+  background-color: rgb(212, 29, 90);
+  border-radius: 20px;
+  padding: 8px 28px;
+  box-shadow: 3px 3px 6px grey;
+  font-size: 12px;
+  margin-top: 20px;
+  color: white;
+}
+.form-2 .bottom-content {
+  margin-top: 20px;
+}
+.form-2 .bottom-content p {
+  font-size: 12px;
+  color: grey;
+  display: inline-block;
+  margin-left: 6px;
+}
+.bottom-content p#p2 {
+  display: inline-block;
+  margin-left: 20px;
+}
+.form-2 .bottom-content p a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: blue;
+}
+.form-2 .bottom-content p a:hover {
+  color: red;
+}
+.form-2 .social-icons {
+  width: 100%;
+  background-color: cornflowerblue;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-2 .social-icons i {
+  color: white;
+  margin: 0px 20px;
+  font-size: 20px;
+}
+
+/* Form Template 3 */
+
+.form-3 {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  margin: 50px 30px 20px 30px;
+  box-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
+  border-radius: 5px;
+}
+.form-3 .form-header3 {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  overflow: hidden;
+}
+
+.form-3 input[type="email"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 0px 0px 10px 0;
+}
+.form-3-content {
+  padding: 20px;
+}
+.form-3 input[type="password"] {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px 10px 0;
+}
+.form-3 input[type="submit"] {
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, skyblue, blue);
+  border-radius: 20px;
+  padding: 8px 28px;
+  width: 100%;
+  box-shadow: 3px 3px 6px grey;
+  font-size: 12px;
+  margin-top: 20px;
+  color: white;
+}
+.form-3 .bottom-content {
+  margin-top: 20px;
+}
+.form-3 .bottom-content p {
+  font-size: 12px;
+  color: grey;
+  text-align: right;
+}
+.bottom-content p#p3 {
+  margin-top: 20px;
+  text-align: center;
+}
+.form-3 .bottom-content p a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: blue;
+}
+.form-3 .bottom-content p a:hover {
+  color: red;
+}
+.form-3 .social-icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-3 .social-icons i {
+  color: rgb(0, 140, 255);
+  margin: 0px 15px;
+  width: 60px;
+  font-size: 15px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgb(0, 140, 255);
+}
