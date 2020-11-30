@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background-color: darkslateblue;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heading {
+  text-align: center;
+  padding: 20px;
+  background-color: gainsboro;
+}
+
+form {
+  padding: 20px 30px;
+  background-color: whitesmoke;
+}
+
+input {
+  font-size: medium;
+  outline: 0;
+  background-color: whitesmoke;
+  border: 0;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: darkslateblue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(29, 18, 100);
+}
+
+i {
+  position: absolute;
+  top: 21px;
+  right: 10px;
+}
+
+.container {
+  width: 40%;
+  box-shadow: 3px 3px 12px rgb(70, 69, 69);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-container {
+  position: relative;
+}
+
+.success {
+  border-bottom: 2px solid rgb(46, 194, 46);
+}
+
+.success-check {
+  font-weight: bold;
+  color: rgb(46, 194, 46);
+}
+
+.fail {
+  border-bottom: 2px solid red;
+}
+
+.fail-cross {
+  font-weight: bold;
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.block {
+  margin-bottom: 30px;
+}
