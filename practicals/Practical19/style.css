@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(black, rgb(196, 180, 180));
+}
+.container {
+  background-color: white;
+  width: 360px;
+  height: 400px;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.6s;
+  overflow: hidden;
+}
+.container form {
+  width: 280px;
+  position: absolute;
+  left: 40px;
+  top: 80px;
+  /* background-color: white; */
+}
+form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: red;
+}
+form input {
+  width: 100%;
+  padding: 10px 5px;
+  margin: 5px 0px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.btn-box {
+  margin: 30px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form button {
+  width: 120px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border: 2px solid black;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#form2 {
+  left: 450px;
+}
+#form3 {
+  left: 450px;
+}
+form button:hover {
+  background-color: white;
+  color: black;
+}
+.step-row {
+  width: 360px;
+  height: 40px;
+  box-shadow: 0px -1px 5px -2px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+}
+.step-col {
+  width: 120px;
+  text-align: center;
+  color: rgb(238, 238, 238);
+  position: relative;
+  z-index: 1;
+}
+#prog {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  background-image: linear-gradient(rgb(0, 10, 10), rgb(101, 105, 109));
+  transition: 0.6s;
+}
+#prog::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  right: -20px;
+  border-left: 20px solid rgb(83, 85, 85);
+}
